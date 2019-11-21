@@ -47,6 +47,7 @@ namespace HotWheels.Repo
                 ThemAnh(sp, photo);
                 s.Anh = sp.Anh;
                 s.MoTa = sp.MoTa;
+		s.ID_ThuongHieu = sp.ID_ThuongHieu;
 
                 _context.SaveChanges();
 
