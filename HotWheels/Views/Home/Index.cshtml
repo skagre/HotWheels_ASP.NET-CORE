@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="banner" style="margin: 10px 0;">
+        <div class="row">
+            <div class="col-md-12" style="background-color: white;">
+                <img src="~/images/banner.png" alt="lỗi" style="width: 100%;">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+
+        <div class="col-md-9">
+            @if (ViewBag.search != null)
+            {
+                <h4 style="text-align: center;">Tìm kiếm: @ViewBag.search</h4>
+            }
+            <div class="row" style="width: 100%;">
+                @foreach (var i in Model.sanpham)
+                {
+                    <div class="col-md-4 text-center" style="border: 1px solid #e0e0e0; background-color: white;">
+                        <a asp-action="ctsanpham" asp-route-id="@i.ID_SanPham" style="text-decoration: none; color: black;">
+                            <img src="~/images/@i.Anh" alt="lỗi" style="width: 180px; height: 260px;">
+                            <h6>@i.TenSanPham</h6>
+                            <p style="font-weight: bold; color: red;">@i.DonGia.ToString("#.###") VND</p>
+                        </a>
+                    </div>
+                }
+
+            </div>
+        </div>
+
+        <div class="col-md-3" style="background-color: white; padding: 10px;">
+            <h4>THƯƠNG HIỆU / LOẠI</h4>
+            <ul style="padding: 0 20px; list-style-type: square;">
+                <li style="width: auto; padding: 5px 0;">
+                    <a asp-action="Index" style="color: black; text-transform: uppercase; display: block; font-size: 20px;">Tất cả sản phẩm</a>
+                </li>
+                @foreach (var i in Model.thuonghieu)
+                {
+                    <li style="width: auto; padding: 5px 0;">
+                        <a asp-action="HienThiTheoThuongHieu" asp-route-id="@i.ID_ThuongHieu" style="color: black; text-transform: uppercase; display: block; font-size: 20px;">@i.TenThuongHieu</a>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>

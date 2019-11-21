@@ -1,0 +1,20 @@
+﻿@model ThuongHieu
+@{
+    ViewData["Title"] = "suathuonghieu";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h4 style="text-align: center; font-weight: bold; margin: 20px auto;">Sửa thương hiệu</h4>
+<form asp-action="SuaThuongHieu" method="post" style="padding: 0 20px;">
+    <div class="form-row">
+        <div class="form-group col-md-12">
+            <label>Tên thương hiệu</label>
+            <input asp-for="TenThuongHieu" type="text" class="form-control" placeholder="Nhập tên thương hiệu">
+        </div>
+    </div>
+
+    <div class="col-md-12 text-center">
+        <button type="submit" class="btn" style="background-color: #d5d6ff;">Sửa thương hiệu</button>
+    </div>
+</form>
+

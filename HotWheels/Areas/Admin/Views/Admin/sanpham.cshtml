@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h4 style="text-align: center; font-weight: bold; margin: 20px auto;">Danh sách sản phẩm</h4>
+<a asp-action="themsanpham" style="font-size: 20px;">+ Thêm sản phẩm mới</a>
+<table class="table table-striped text-center">
+    <thead>
+        <tr>
+            <th>Hình ảnh</th>
+            <th>Tên sản phẩm</th>
+            <th>Giá</th>
+            <th>Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var i in Model)
+        {
+            <tr>
+                <td>
+                    <img src="~/images/@i.Anh" alt="lỗi" style="max-width: 100px;">
+                </td>
+                <td style="width: 30%;">@i.TenSanPham</td>
+                <td>@i.DonGia.ToString("#.###") VND</td>
+                <td>
+                    <a asp-action="chitietsanpham" asp-route-id="@i.ID_SanPham" style="font-size: 20px;">Chi tiết</a>
+                    <span> | </span>
+                    <a asp-action="suasanpham" asp-route-id="@i.ID_SanPham" style="font-size: 20px; color: green;">Sửa</a>
+                    <span> | </span>
+                    <a asp-action="xoasanpham" asp-route-id="@i.ID_SanPham" style="font-size: 20px; color: red;">Xóa</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
+
+

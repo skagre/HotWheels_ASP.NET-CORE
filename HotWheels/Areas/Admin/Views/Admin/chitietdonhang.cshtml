@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewData["Title"] = "chitietdonhang";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h4 style="text-align: center; font-weight: bold; margin: 20px auto;">Chi tiết đơn hàng</h4>
+<table class="table table-striped text-center">
+    <thead>
+        <tr>
+            <th>Họ tên</th>
+            <th>Email</th>
+            <th>Số điện thoại</th>
+            <th>Địa chỉ</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr>
+            <td>@Model.HoVaTen</td>
+            <td>@Model.Email</td>
+            <td>@Model.SoDienThoai</td>
+            <td>@Model.DiaChi</td>
+        </tr>
+
+    </tbody>
+</table>

@@ -1,0 +1,71 @@
+﻿@model GioHangVM
+@{
+    ViewData["Title"] = "giohang";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container" style="margin: 30px auto;">
+    <h4>GIỎ HÀNG</h4>
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table text-center" style="background-color: white;">
+                <thead>
+                    <tr>
+                        <th>Hình ảnh</th>
+                        <th>Tên sản phẩm</th>
+                        <th>Giá</th>
+                        <th>Số lượng</th>
+                        <th>Thành tiền</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var i in Model.GioHang.ChiTietGioHang)
+                    {
+                        <tr>
+                            <td><img src="~/images/@i.SanPham.Anh" alt="lỗi" style="max-width: 100px;"></td>
+                            <td>@i.SanPham.TenSanPham</td>
+                            <td>@i.SanPham.DonGia.ToString("#.###") VND</td>
+                            <td>
+                                <div class="input-group">
+                                    <input type="text" class="form-control text-center" value="@i.SoLuong">
+                                    <div class="input-group-append">
+                                        <a asp-action="Them" asp-route-id="@i.SanPham.ID_SanPham" class="btn btn-outline-secondary">+</a>
+                                        <a asp-action="Xoa" asp-route-id="@i.SanPham.ID_SanPham" class="btn btn-outline-secondary">-</a>
+                                    </div>
+                                </div>
+                            </td>
+                            @{ decimal tong = @i.SoLuong * @i.SanPham.DonGia; }
+                            <td>@tong.ToString("#.###") VND</td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+            <a asp-action="Index">Chọn thêm sản phẩm</a>
+        </div>
+        
+        <form asp-action="thanhtoan" method="POST">
+            <div class="row">
+                <div class="col-md-6" style="padding: 40px 30px; border-right: 1px dashed black; border-left: 5px solid #b6e6f1;">
+                    <h4>THÔNG TIN GIAO HÀNG</h4>
+
+                    <input asp-for="@Model.DonHang.HoVaTen" type="text" placeholder="Họ và tên" style="width: 100%; padding: 5px 10px; margin: 10px 0; border-radius: 5px;">
+                    <input asp-for="@Model.DonHang.Email" type="email" placeholder="Email" style="width: 100%; padding: 5px 10px; margin: 10px 0; border-radius: 5px;">
+                    <input asp-for="@Model.DonHang.SoDienThoai" type="text" placeholder="Số điện thoại" style="width: 100%; padding: 5px 10px; margin: 10px 0; border-radius: 5px;">
+                    <input asp-for="@Model.DonHang.DiaChi" type="text" placeholder="Địa chỉ" style="width: 100%; padding: 5px 10px; margin: 10px 0; border-radius: 5px;">
+                    
+
+                </div>
+                <div class="col-md-6" style="background-color: white; padding: 40px 30px;">
+                    <h4 style="border-bottom: 1px solid #e8e8e8; margin-bottom: 15px;">GIỎ HÀNG</h4>
+                    <p style="text-align: right;">Thành tiền<span style="margin-left: 20px;">@Model.TongTienGioHang.ToString("#.###") VND</span></p>
+                    <p style="text-align: right; font-weight: bold;">Tổng số tiền<span style="margin-left: 20px; color: red;">@Model.TongTienGioHang.ToString("#.###") VND</span></p>
+                    <hr style="color: #e8e8e8;">
+                    <button type="submit" class="btn btn-success" style="display: block; padding: 14px 12px; float: right; margin-top: 10px;">THANH TOÁN</button>
+                </div>
+            </div>
+        </form>
+       
+    </div>
+</div>
+

@@ -1,0 +1,60 @@
+﻿@model SanPham
+@{
+    ViewData["Title"] = "themsanpham";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h4 style="text-align: center; font-weight: bold; margin: 20px auto;">Thêm mới sản phẩm</h4>
+<form asp-action="ThemSanPham" method="post" enctype="multipart/form-data" style="padding: 0 20px;">
+    <div class="form-row">
+        <div class="form-group col-md-8">
+            <label>Tên sản phẩm</label>
+            <input asp-for="TenSanPham" type="text" class="form-control" placeholder="Nhập tên sản phẩm">
+        </div>
+        <div class="form-group col-md-4">
+            <label>Thương hiệu / loại</label>
+            <select asp-for="ID_ThuongHieu" class="form-control">
+                @foreach (var i in ViewBag.thuonghieu)
+                {
+                    <option value="@i.ID_ThuongHieu">@i.TenThuongHieu</option>
+                }
+            </select>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-3">
+            <label>Giá</label>
+            <input asp-for="DonGia" type="number" class="form-control" value="0">
+        </div>
+        <div class="form-group col-md-3">
+            <label>Tỷ lệ</label>
+            <input asp-for="TyLe" type="text" class="form-control" placeholder="Nhập tỷ lệ">
+        </div>
+        <div class="form-group col-md-3">
+            <label>Chất liệu</label>
+            <input asp-for="ChatLieu" type="text" class="form-control" placeholder="Nhập chất liệu">
+        </div>
+        <div class="form-group col-md-3">
+            <label>Xuất xứ</label>
+            <input asp-for="XuatXu" type="text" class="form-control" placeholder="Nhập xuất xứ">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-12">
+            <label>Ảnh</label>
+            <div class="custom-file">
+                <input asp-for="Anh" type="file" class="custom-file-input" required>
+                <label class="custom-file-label">Chọn ảnh...</label>
+            </div>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-12">
+            <label>Mô tả</label>
+            <input asp-for="MoTa" type="text" class="form-control" placeholder="Nhập mô tả">
+        </div>
+    </div>
+    <div class="col-md-12 text-center">
+        <button type="submit" class="btn" style="background-color: #d5d6ff;">Thêm mới sản phẩm</button>
+    </div>
+</form>

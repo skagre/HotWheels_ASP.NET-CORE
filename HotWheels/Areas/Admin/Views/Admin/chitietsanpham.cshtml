@@ -1,0 +1,32 @@
+﻿@model SanPham
+@{
+    ViewData["Title"] = "chitietsanpham";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <h4 style="text-align: center; font-weight: bold; margin: 20px auto;">Chi tiết sản phẩm</h4>
+    <div class="row" style="border-bottom: 1px dashed black;">
+        <div class="col-md-6 text-center">
+            <img src="~/images/@Model.Anh" alt="lỗi" style="width: 100%;">
+            <p style="margin-top: 10px;">@Model.TenSanPham</p>
+        </div>
+        <div class="col-md-6">
+            <h4>@Model.TenSanPham</h4>
+            <p style="color: red; font-size: 20px; font-weight: bold;">Giá: @Model.DonGia VND</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h4 style="margin-top: 15px;">Thông tin sản phẩm</h4>
+            <ul style="padding: 0 15px;">
+                <li>Tỷ lệ: @Model.TyLe</li>
+                <li>Chất liệu: @Model.ChatLieu</li>
+                <li>Xuất xứ: @Model.XuatXu</li>
+            </ul>
+            <h4>Mô tả</h4>
+            <p>@Model.MoTa</p>
+        </div>
+    </div>
+</div>
+

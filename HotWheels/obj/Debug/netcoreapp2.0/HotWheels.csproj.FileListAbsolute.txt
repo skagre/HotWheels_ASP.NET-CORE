@@ -1,0 +1,11 @@
+E:\HotWheels\HotWheels\bin\Debug\netcoreapp2.0\HotWheels.deps.json
+E:\HotWheels\HotWheels\bin\Debug\netcoreapp2.0\HotWheels.runtimeconfig.json
+E:\HotWheels\HotWheels\bin\Debug\netcoreapp2.0\HotWheels.runtimeconfig.dev.json
+E:\HotWheels\HotWheels\bin\Debug\netcoreapp2.0\HotWheels.dll
+E:\HotWheels\HotWheels\obj\Debug\netcoreapp2.0\HotWheels.csprojAssemblyReference.cache
+E:\HotWheels\HotWheels\obj\Debug\netcoreapp2.0\HotWheels.csproj.CoreCompileInputs.cache
+E:\HotWheels\HotWheels\obj\Debug\netcoreapp2.0\HotWheels.AssemblyInfoInputs.cache
+E:\HotWheels\HotWheels\obj\Debug\netcoreapp2.0\HotWheels.AssemblyInfo.cs
+E:\HotWheels\HotWheels\bin\Debug\netcoreapp2.0\HotWheels.pdb
+E:\HotWheels\HotWheels\obj\Debug\netcoreapp2.0\HotWheels.dll
+E:\HotWheels\HotWheels\obj\Debug\netcoreapp2.0\HotWheels.pdb

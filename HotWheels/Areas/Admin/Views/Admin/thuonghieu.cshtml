@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewData["Title"] = "thuonghieu";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h4 style="text-align: center; font-weight: bold; margin: 20px auto;">Danh sách thương hiệu</h4>
+<a asp-action="themthuonghieu" style="font-size: 20px;">+ Thêm thương hiệu mới</a>
+<table class="table table-striped text-center">
+    <thead>
+        <tr>
+            <th>STT</th>
+            <th>Tên sản phẩm</th>
+            <th>Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{ int x = 1; }
+        @foreach (var i in Model)
+        {
+            <tr>
+                <td>@x</td>
+                <td>@i.TenThuongHieu</td>
+                <td>
+                    <a asp-action="suathuonghieu" asp-route-id="@i.ID_ThuongHieu" style="font-size: 20px; color: green;">Sửa</a>
+                    <span> | </span>
+                    <a asp-action="xoathuonghieu" asp-route-id="@i.ID_ThuongHieu" style="font-size: 20px; color: red;">Xóa</a>
+                </td> 
+            </tr>
+            x++;
+        }
+    </tbody>
+</table>
+
+

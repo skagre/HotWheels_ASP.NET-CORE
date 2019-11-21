@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hot Wheels - Admin</title>
+    <link href="~/bootstrap-4.3.1-dist/css/bootstrap.css" rel="stylesheet" />
+    <script src="~/bootstrap-4.3.1-dist/js/bootstrap.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+
+    <div class="header" style="background-image: url('../images/bg-admin.png'); background-position: center; width: 100%; height: 200px;">
+        <div class="row" style="width: 900px; margin: 0 auto; padding-top: 150px;">
+            <div class="col-md-12 text-center">
+                <h4 style="font-weight: bold; font-size: 32px;"><a asp-action="SanPham" style="text-decoration: none; color: black;">HotWheels - Admin Panel</a></h4>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" style="margin: 30px auto;">
+        <div class="row">
+            <div class="col-md-3" style="background-color: white; padding: 10px; border-right: 5px dashed #d5d6ff;">
+                <h4>Chào, Admin</h4>
+                <ul style="padding: 0 20px; list-style-type: square;">
+                    <li style="width: auto; padding: 5px 0;">
+                        <a asp-action="SanPham" style="color: black; text-transform: uppercase; display: block; font-size: 18px;">Quản lý sản phẩm</a>
+                    </li>
+                    <li style="width: auto; padding: 5px 0;">
+                        <a asp-action="ThuongHieu" style="color: black; text-transform: uppercase; display: block; font-size: 18px;">Quản lý thương hiệu</a>
+                    </li>
+                    <li style="width: auto; padding: 5px 0;">
+                        <a asp-action="DonHang" style="color: black; text-transform: uppercase; display: block; font-size: 18px;">Quản lý hóa đơn</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-9">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+
+    <div class="footer text-center" style="background-color: #d5d6ff; line-height: 100px; margin-top: 10px;">
+        <p style="margin: 0;"><strong>HotWheels</strong>  - Cửa hàng mô hình xe số 1 Việt Nam</p>
+    </div>
+
+
+</body>
+</html>
+
